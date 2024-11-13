@@ -1,0 +1,235 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+      180deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+      90deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --pill-accent: var(--bright-blue);
+
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  }
+
+  p {
+    margin: 0;
+    color: var(--gray-700);
+  }
+
+  main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+  }
+
+  .angular-logo {
+    max-width: 9.2rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 3rem;
+    padding: 2rem; /* Added padding */
+    border-radius: 15px; /* Rounded corners */
+    background: var(--red-to-pink-to-purple-vertical-gradient); /* Gradient background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft drop shadow */
+  }
+
+  .content h1 {
+    margin-top: 1.75rem;
+  }
+
+  .content p {
+    margin-top: 1.5rem;
+  }
+
+  .divider {
+    width: 1px;
+    background: var(--red-to-pink-to-purple-vertical-gradient);
+    margin-inline: 0.5rem;
+  }
+
+  .pill-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    --pill-accent: var(--bright-blue);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+    padding-inline: 0.75rem;
+    padding-block: 0.375rem;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-family: var(--inter-font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: -0.00875rem;
+    text-decoration: none;
+  }
+
+  .pill:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  }
+
+  .pill-group .pill:nth-child(6n + 1) {
+    --pill-accent: var(--bright-blue);
+  }
+  .pill-group .pill:nth-child(6n + 2) {
+    --pill-accent: var(--french-violet);
+  }
+  .pill-group .pill:nth-child(6n + 3),
+  .pill-group .pill:nth-child(6n + 4),
+  .pill-group .pill:nth-child(6n + 5) {
+    --pill-accent: var(--hot-red);
+  }
+
+  .pill-group svg {
+    margin-inline-start: 0.25rem;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-links path {
+    transition: fill 0.3s ease;
+    fill: var(--gray-400);
+  }
+
+  .social-links a:hover svg path {
+    fill: var(--gray-900);
+  }
+
+  @media screen and (max-width: 650px) {
+    .content {
+      flex-direction: column;
+      width: max-content;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--red-to-pink-to-purple-horizontal-gradient);
+      margin-block: 1.5rem;
+    }
+  }
+</style>
+
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 982 239"
+        fill="none"
+        class="angular-logo"
+      >
+        <g clip-path="url(#a)">
+          <path
+            fill="url(#b)"
+            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.623-17.476-11.728-4.399-5.106-6.6-11.421-6.6-18.455v-80.074h28.231v77.53c0 5.649 1.319 9.74 3.958 12.276 2.622 2.575 6.494 3.863 11.72 3.863 5.031 0 9.454-1.288 13.128-3.859 3.686-2.571 6.649-6.154 8.993-10.627 2.326-4.489 3.5-9.254 3.5-14.3v-77.278h28.23v77.278c0 10.339-3.53 19.107-10.637 25.303-7.106 6.186-16.062 9.279-26.86 9.279Z"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="a">
+            <path fill="#fff" d="M0 0h982v239H0z"></path>
+          </clipPath>
+          <linearGradient
+            id="b"
+            x1="-149.266"
+            x2="743.459"
+            y1="23.102"
+            y2="515.438"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stop-color="#E23237"></stop>
+            <stop offset="1" stop-color="#E23237" stop-opacity="0.15"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="pill-group">
+      <div class="pill">Angular</div>
+      <div class="pill">Components</div>
+      <div class="pill">Framework</div>
+      <div class="pill">Learning</div>
+      <div class="pill">Web</div>
+    </div>
+    <div class="divider"></div>
+  </div>
+</main>
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />
