@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 // Import non-sensitive environment variables (like region)
-import { environment } from '../../environments/environment';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +15,21 @@ export class AwsService {
   private dynamoDB: AWS.DynamoDB;
 
   constructor() {
+    // Access environment variables using index signature
+    const accessKeyId = process.env['AWS_ACCESS_KEY_ID'];
+    const secretAccessKey = process.env['AWS_SECRET_ACCESS_KEY'];
+
+    // Check if the credentials are available, throw an error if not
+    if (!accessKeyId || !secretAccessKey) {
+      throw new Error('AWS credentials are missing!');
+    }
+
     // Initialize AWS SDK with sensitive data from .env and region from environment.ts
     AWS.config.update({
       region: environment.awsRegion,  // Use region from environment.ts
       credentials: new AWS.Credentials({
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,  // Use sensitive key from .env
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY  // Use sensitive key from .env
+        accessKeyId,  // Use sensitive key from .env
+        secretAccessKey  // Use sensitive key from .env
       })
     });
 
