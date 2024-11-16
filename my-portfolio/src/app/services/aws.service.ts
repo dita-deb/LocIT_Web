@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 // Import non-sensitive environment variables (like region)
-import { environment } from '../environments/environment';
+import { environment } from 'C:\Users\mc2di\LocitWeb\LocIT_Web\my-portfolio\src\environments';
 
 @Injectable({
   providedIn: 'root'
