@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,5 +32,28 @@
             });
         });
     </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocIT Dashboard</title>
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script>
+        const socket = io();
+
+        // Listen for data updates
+        socket.on('update_data', (data) => {
+            console.log("Received Data:", data);
+            document.getElementById('data').innerHTML = JSON.stringify(data, null, 2);
+        });
+    </script>
+</head>
+<body>
+    <h1>LocIT Dashboard</h1>
+    <pre id="data">Waiting for data...</pre>
 </body>
 </html>
