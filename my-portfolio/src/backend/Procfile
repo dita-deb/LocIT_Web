@@ -1,0 +1,4 @@
+web: python fetch_dynamodb_data.py
+web: gunicorn fetch_dynamodb_data:app --preload
+
+
