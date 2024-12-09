@@ -82,8 +82,8 @@ import os
 
 # Load environment variables securely (remove hardcoded AWS credentials)
 aws_region = os.getenv('AWS_REGION', 'us-east-2')
-aws_access_key_id = os.getenv('AKIAUMYCIA4OK2DVRFOH')
-aws_secret_access_key = os.getenv('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')
+aws_access_key_id = os.getenv('4OK2DVRFOH.AKIAUMYCIA')
+aws_secret_access_key = os.getenv('+vYQEkW7GjEvUFkkOhyuCyycN.lcqmh4Y9acJ2vrE')
 
 # Initialize Flask app and SocketIO
 app = Flask(__name__)
@@ -185,8 +185,8 @@ if __name__ == "__main__":
 # dynamodb = boto3.client(
 #     'dynamodb',
 #     region_name=os.getenv('AWS_REGION', 'us-east-2'),
-#     aws_access_key_id=os.getenv('AKIAUMYCIA4OK2DVRFOH'),
-#     aws_secret_access_key=os.getenv('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')
+#     aws_access_key_id=os.getenv
+#     aws_secret_access_key=os.getenv
 # )
 
 # # Function to fetch and emit data
